@@ -2,12 +2,20 @@ class Main {
     constructor() {
         this.DOM = {
             audios: document.querySelectorAll('.audio'),
-            player: document.querySelector('#player')
+            player: document.querySelector('#player'),
+            carousel: document.querySelector('#carousel')
         }
         this.init();
+        this.events();
     }
     init() {
-        this.events();
+        const carousel = new bootstrap.Carousel(this.DOM.carousel, {
+            interval: 5000,
+            touch: false
+        })
+
+        carousel.cycle();
+        
     }
     events() {
         this.DOM.audios.forEach(audio => {
