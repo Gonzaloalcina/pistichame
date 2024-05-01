@@ -13,9 +13,7 @@ class Main {
             interval: 5000,
             touch: false
         })
-
         carousel.cycle();
-        
     }
     events() {
         this.DOM.audios.forEach(audio => {
